@@ -1,0 +1,137 @@
+@layer components {
+  .landing-container {
+    @apply min-h-screen bg-white text-[#1d1d1f] antialiased;
+    font-family: -apple-system, 'SF Pro Display', 'Inter', system-ui, sans-serif;
+  }
+
+  .landing-section {
+    @apply px-6 lg:px-8 xl:px-12 py-20 lg:py-28 xl:py-32;
+  }
+
+  .landing-section-alt {
+    @apply bg-[#f5f5f7];
+  }
+
+  .container {
+    @apply mx-auto max-w-[1280px];
+  }
+
+  .section-header {
+    @apply text-center max-w-3xl mx-auto mb-16 lg:mb-20;
+  }
+
+  .section-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8a8a8f] mb-3;
+  }
+
+  .section-title {
+    @apply text-[28px] lg:text-[36px] xl:text-[42px] font-semibold tracking-tight leading-tight text-[#1d1d1f];
+  }
+
+  .section-subtitle {
+    @apply mt-4 text-[15px] lg:text-[17px] text-[#6e6e73] leading-relaxed max-w-2xl mx-auto;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-black text-white text-[15px] font-medium transition-all duration-200 hover:bg-[#1d1d1f] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border border-[#d2d2d7] bg-white text-[#1d1d1f] text-[15px] font-medium transition-all duration-200 hover:border-[#8a8a8f] hover:bg-[#fafafa] active:scale-[0.98] focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2;
+  }
+
+  .pillar-card {
+    @apply rounded-2xl border border-[#e5e5ea] bg-white p-6 lg:p-8 transition-all duration-300 hover:border-[#d2d2d7] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1;
+  }
+
+  .pillar-icon {
+    @apply w-10 h-10 rounded-xl bg-[#f5f5f7] flex items-center justify-center mb-5 text-black;
+  }
+
+  .pillar-title {
+    @apply text-[18px] font-semibold text-[#1d1d1f] mb-2;
+  }
+
+  .pillar-desc {
+    @apply text-[14px] text-[#6e6e73] leading-relaxed mb-6;
+  }
+
+  .pillar-list {
+    @apply space-y-3;
+  }
+
+  .pillar-item {
+    @apply flex items-start gap-3 text-[14px] text-[#45454a] leading-relaxed;
+  }
+
+  .pillar-bullet {
+    @apply w-1.5 h-1.5 rounded-full bg-[#d2d2d7] mt-2.5 flex-shrink-0;
+  }
+
+  .step-card {
+    @apply flex flex-col items-center text-center p-6 lg:p-8 rounded-2xl border border-[#e5e5ea] bg-white transition-all duration-300 hover:border-[#d2d2d7] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)] hover:-translate-y-1 min-h-[280px];
+  }
+
+  .step-number {
+    @apply w-12 h-12 rounded-xl bg-black text-white font-semibold text-[18px] flex items-center justify-center mb-5 flex-shrink-0;
+  }
+
+  .step-title {
+    @apply text-[16px] font-semibold text-[#1d1d1f] mb-2;
+  }
+
+  .step-desc {
+    @apply text-[13px] text-[#6e6e73] leading-relaxed;
+  }
+
+  .trust-card {
+    @apply text-center p-6 lg:p-8 rounded-2xl border border-[#e5e5ea] bg-white transition-all duration-300 hover:border-[#d2d2d7] hover:shadow-[0_12px_40px_rgba(0,0,0,0.06)];
+  }
+
+  .trust-icon {
+    @apply w-12 h-12 rounded-xl bg-[#f5f5f7] flex items-center justify-center mx-auto mb-4 text-black;
+  }
+
+  .trust-title {
+    @apply text-[16px] font-semibold text-[#1d1d1f] mb-2;
+  }
+
+  .trust-desc {
+    @apply text-[13px] text-[#6e6e73] leading-relaxed;
+  }
+
+  .divider {
+    @apply w-full h-px bg-gradient-to-r from-transparent via-[#e5e5ea] to-transparent my-16 lg:my-20;
+  }
+
+  .footer-link {
+    @apply text-[13px] text-[#6e6e73] hover:text-[#1d1d1f] transition-colors duration-150;
+  }
+
+  .footer-title {
+    @apply text-[11px] font-semibold uppercase tracking-[0.15em] text-[#8a8a8f] mb-4;
+  }
+
+  .scroll-reveal {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+
+  .scroll-reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  .stagger-1 { transition-delay: 50ms; }
+  .stagger-2 { transition-delay: 100ms; }
+  .stagger-3 { transition-delay: 150ms; }
+  .stagger-4 { transition-delay: 200ms; }
+  .stagger-5 { transition-delay: 250ms; }
+  .stagger-6 { transition-delay: 300ms; }
+  .stagger-7 { transition-delay: 350ms; }
+  .stagger-8 { transition-delay: 400ms; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+      @apply opacity-100 translate-y-0 transition-none;
+    }
+  }
+}
