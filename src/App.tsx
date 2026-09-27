@@ -3,6 +3,7 @@ import { AlertCircle, CheckCircle2, Clock3, Cpu, Activity, Upload, History, Tras
 import { VideoCanvasPlayer } from './components/VideoCanvasPlayer';
 import { HumanInsightsView } from './components/HumanInsightsView';
 import { RobotDataView } from './components/RobotDataView';
+import { LogoMark } from './components/landing/Logo';
 import type { AnalysisResult, SavedAnalysis } from './types';
 import { AIAnalyzerService } from './services/aiAnalyzer';
 import { AnalysisHistory } from './services/analysisHistory';
@@ -162,7 +163,7 @@ export function App() {
       <header className="sticky top-0 z-20 border-b border-[#e5e5ea] bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1440px] items-center justify-between gap-4 px-6 py-4">
         <div className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded-[10px] bg-black"><span className="text-[10px] font-bold leading-none tracking-tight text-white">PS</span></div>
+          <LogoMark size={32} className="shrink-0 rounded-[10px]" />
           <span className="text-[15px] font-semibold tracking-tight">PhysioSkill</span>
         </div>
         <div className="flex items-center rounded-full border border-[#e5e5ea] bg-[#f5f5f7] p-1">

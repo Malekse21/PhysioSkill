@@ -116,6 +116,9 @@ async function handleAnalysis(req: IncomingMessage, res: ServerResponse) {
 }
 
 function publicAnalysisError(stage: string, message: string): string {
+  if (/EACCES.*blocked|blocked.*EACCES/i.test(message)) {
+    return 'The app server couldn’t reach the video analysis service. Restart the app with internet access, then try again.';
+  }
   if (stage === 'read_provider_keys' || /api key|invalid api key|unauthorized|401/i.test(message)) {
     return 'The analysis setup needs attention. Check your saved settings, then try again.';
   }
