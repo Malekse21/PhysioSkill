@@ -73,7 +73,7 @@ export function App() {
         onProgress: (progress, stage) => { setAnalysisProgress(progress); setStageText(stage); },
       });
       setCurrentData(result);
-      const record = AnalysisHistory.create(file.name, duration, result, file);
+      const record = AnalysisHistory.create(file.name, duration, result, file, taskHint.trim() || result.robot_data.task_type);
       await AnalysisHistory.save(record);
       setActiveRecordId(record.id);
       localStorage.setItem(ACTIVE_ANALYSIS_STORAGE_KEY, record.id);
@@ -197,7 +197,7 @@ export function App() {
                 <HumanInsightsView insights={currentData.human_insights} history={history} onSelectStepTime={setSelectedTime} />
               </div>
               <div hidden={activeTab !== 'robot'}>
-                <RobotDataView robotData={currentData.robot_data} history={history} onSelectTime={setSelectedTime} />
+                <RobotDataView robotData={currentData.robot_data} processLabel={history.find(item => item.id === activeRecordId)?.processLabel || currentData.robot_data.task_type} history={history} videoUrl={videoUrl} onSelectTime={setSelectedTime} />
               </div>
             </> : (
               <div className="flex min-h-[420px] flex-col items-center justify-center rounded-[24px] border border-[#e5e5ea] bg-white px-8 py-12 text-center shadow-[0_8px_30px_rgba(0,0,0,0.035)]">

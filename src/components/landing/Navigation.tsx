@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { LogoMark } from './Logo';
 

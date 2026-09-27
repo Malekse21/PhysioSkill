@@ -114,6 +114,7 @@ export interface RobotTrainingData {
   atomic_actions: AtomicAction[];
   scene_graph?: {
     coordinate_frame: 'image_2d_normalized';
+    reference_time_sec?: number;
     objects: RobotSceneObject[];
     relations: RobotSpatialRelation[];
   };
@@ -145,6 +146,7 @@ export interface StepReview {
 export interface SavedAnalysis {
   id: string;
   name: string;
+  processLabel?: string;
   createdAt: string;
   duration: number;
   result: AnalysisResult;

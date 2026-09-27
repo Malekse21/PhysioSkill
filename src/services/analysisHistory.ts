@@ -32,7 +32,7 @@ export const AnalysisHistory = {
   get: (id: string) => runRequest<SavedAnalysis | undefined>('readonly', store => store.get(id)),
   save: (record: SavedAnalysis) => runRequest<IDBValidKey>('readwrite', store => store.put(record)),
   remove: (id: string) => runRequest<undefined>('readwrite', store => store.delete(id)),
-  create(name: string, duration: number, result: AnalysisResult, video: Blob | undefined): SavedAnalysis {
-    return { id: crypto.randomUUID(), name, createdAt: new Date().toISOString(), duration, result, video, reviews: {} };
+  create(name: string, duration: number, result: AnalysisResult, video: Blob | undefined, processLabel?: string): SavedAnalysis {
+    return { id: crypto.randomUUID(), name, processLabel, createdAt: new Date().toISOString(), duration, result, video, reviews: {} };
   },
 };

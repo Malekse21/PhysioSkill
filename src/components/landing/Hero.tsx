@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
+import { Button } from '../ui/button';
 import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 import { HeroIllustration } from './HeroIllustration';
 import { Logo } from './Logo';

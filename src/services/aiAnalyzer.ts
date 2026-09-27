@@ -303,7 +303,12 @@ export class AIAnalyzerService {
         video_metadata: { fps: 30, resolution: 'Sampled from source video', total_frames: Math.round(total * 30) },
         atomic_actions: atomicActions,
         ...(raw.scene_graph && typeof raw.scene_graph === 'object' ? {
-          scene_graph: { coordinate_frame: 'image_2d_normalized' as const, objects: sceneObjects, relations: sceneRelations },
+          scene_graph: {
+            coordinate_frame: 'image_2d_normalized' as const,
+            ...(Number.isFinite(Number(rawSceneGraph.reference_time_sec)) ? { reference_time_sec: Math.max(0, Math.min(total, Number(rawSceneGraph.reference_time_sec))) } : {}),
+            objects: sceneObjects,
+            relations: sceneRelations,
+          },
         } : {}),
         demonstration_outcome: outcome,
         ...(typeof raw.demonstration_outcome_evidence === 'string' ? { outcome_evidence: raw.demonstration_outcome_evidence } : {}),

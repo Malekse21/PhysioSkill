@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./styles/landing.css";
+@source "./";
 
 @layer base {
   :root {
